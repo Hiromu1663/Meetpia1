@@ -10,6 +10,7 @@
       
         <div class="lg:w-4/6 lg:py-6 pl-5 mt-6 mb-3 lg:mt-0"> 
           <h1 class="text-gray-900 text-3xl title-font font-medium">{{ $user->name }}</h1>
+          <a href="{{ route('user.contact_index', ['id' => Auth::id()]) }}" class="ml-5 mb-1"><h2>Contact List</h2></a>
           <a href="{{ route('user.edit', $user->id) }}" class="ml-5 mb-1"><h2>Edit Profile</h2></a>
           <div class="flex">
             <span class="flex items-center">
@@ -86,7 +87,7 @@
     @foreach($projects as $project)
     <div class="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
       <div class="lg:max-w-lg lg:w-1/3 md:w-1/2 w-5/6 mb-10 md:mb-0">
-        <a href="{{ route('user.show-project', $project->id) }}"><img class="object-cover object-center rounded" alt="project-image" src="{{ asset('storage/images/'.$project->image) }}"></a>
+        <a href="{{ route('user.show_project', $project->id) }}"><img class="object-cover object-center rounded" alt="project-image" src="{{ asset('storage/images/'.$project->image) }}"></a>
       </div>
       <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{ $project->title }}</h1>
@@ -102,7 +103,7 @@
           </div>
       
           <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-            <a href="{{ route('user.show-project', $project->id) }}"><p class="mr-3">More Infomation</p></a>
+            <a href="{{ route('user.show_project', $project->id) }}"><p class="mr-3">More Infomation</p></a>
           </div>
         </div>
       </div>
