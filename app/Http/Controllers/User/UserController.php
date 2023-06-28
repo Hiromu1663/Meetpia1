@@ -333,8 +333,6 @@ class UserController extends Controller
     public function contactSend(Request $request, $project_id)
     {
         $validatedData = $request->validate([
-            "name" => ["required", "string"],
-            "email" => ["required", "string"],
             "message" => ["required", "string"],
         ]);
 
@@ -342,8 +340,6 @@ class UserController extends Controller
         $project = Project::find($project_id);
 
         Contact::create([
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
             'message' => $validatedData['message'],
             'project_id' => $project->id,
             'user_id' => $user->id,
