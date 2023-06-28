@@ -67,8 +67,8 @@
                                           <div class="pl-6 lg:pl-3 xl:pl-0 pr-6 py-3">
                                               <div class="flex items-center gap-x-3">
                                                   <div class="grow">
-                                                      <span class="block text-sm font-semibold">{{ $contact->name }}</span>
-                                                      <span class="block text-sm text-gray-500">{{ $contact->email }}</span>
+                                                      <span class="block text-sm font-semibold">{{ $contact->user->name }}</span>
+                                                      <span class="block text-sm text-gray-500">{{ $contact->user->email }}</span>
                                                   </div>
                                               </div>
                                           </div>
